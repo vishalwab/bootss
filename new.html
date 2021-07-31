@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      public void TextBox_GotFocus(object sender, RoutedEventArgs e)
+{
+   TextBox tb = (TextBox)sender;
+   tb.Text = string.Empty;
+   tb.GotFocus -= TextBox_GotFocus;
+}
+    </script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <title>Cup And Handle</title>
+  </head>
+  <body>
+    <div class="container">
+      
+      <div class="row justify-content-center">
+  <div class="col-sm-6">
+  <div>
+    <p></p>
+    
+  </div>
+      <div class="card" style="border-radius: 2%;">
+        <div class=" card-header text-center"><h1 class="card-title">Cup And Handle</h1></div>
+        <div class="body text-center">
+          
+         <div class="d-grid gap-0 col-6 mx-auto">
+  <h6 class="text-center">Breackout Candle Open:</h6>
+  <input type="text" name="" value="Open" class="text-center" onfocus="this.value=''" id="op">
+  <h6 class="text-center">Breackout Candle High:</h6>
+  <input type="text" name="" value="High" class="text-center" onfocus="this.value=''" id="hi">
+  <h6 class="text-center">Breackout Candle Close:</h6>
+  <input type="text" name="" value="Close" class="text-center" onfocus="this.value=''" id="cl">
+  <h6 class="text-center">Breackout Candle Intersection:</h6>
+  <input type="text" name="" value="Intersection" class="text-center" onfocus="this.value=''" id="in">
+  <h6 class="text-center">Max High Pattern:</h6>
+  <input type="text" name="" value="High Pattern" class="text-center" onfocus="this.value=''" id="ph">
+  <h6 class="text-center">Max Low Pattern:</h6>
+  <input type="text" name="" value="Low Pattern" class="text-center" onfocus="this.value=''" id="pl">
+  <h6 class="text-center">Number of Candle:</h6>
+  <input type="text" name="" value="Number Candle" class="text-center" onfocus="this.value=''" id="nc">
+  <p></p>
+  <a href="#scroll"><button class="btn btn-primary" type="button" onClick="answer()">Give me my Answer</button></a>
+  <p></p>
+  
+<div id="scroll">
+<p>The Result is : <br>
+close:-<span id = "aclose"></span></br>
+x:-<span id = "ax"></span></br>
+target:-<span id = "atarget"></span></br>
+support:-<span id = "asupport"></span></br>
+resistence:-<span id = "aresistence"></span></br>
+stoploss:-<span id = "astoploss"></span></br>
+reword:-<span id = "areword"></span></br>
+risk:-<span id = "arisk"></span></br>
+rr:1:<span id = "arr"></span></br>
+number of days:-<span id = "adays"></span></br>
+
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        </div>
+        <div class="card-footer text-center">
+    <h6>@ 2020-2021, Vishal Walunj Web Pvt Ltd.</h6>
+  </div>
+      </div>
+    </div></div>
+    </div>
+  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+
+
+
+
+<script type="text/javascript">
+  function answer()
+{
+      
+          open= document.getElementById("op").value;
+          high= document.getElementById("hi").value;
+          close = document.getElementById("cl").value;   
+          intersection= document.getElementById("in").value;
+          pattenhigh = document.getElementById("ph").value;
+          pattenlow = document.getElementById("pl").value;
+          ncandle= document.getElementById("nc").value;
+
+
+
+           document.getElementById("aclose").innerHTML =close;
+           var x=document.getElementById("ax").innerHTML =pattenhigh-pattenlow;
+           var t=document.getElementById("atarget").innerHTML =Number(intersection)+Number(x);
+             var m=close-open;
+             var s = document.getElementById("asupport").innerHTML =m/2+Number(open);
+             document.getElementById("aresistence").innerHTML =high;
+              var v=2;
+             var s=document.getElementById("astoploss").innerHTML =Number(s)-Number(v);
+            var reword= document.getElementById("areword").innerHTML =Number(t)-Number(close);
+             var risk=document.getElementById("arisk").innerHTML =Number(close)-Number(s);
+                    document.getElementById("arr").innerHTML =Number(reword)/Number(risk);
+                    var day=3;
+                    document.getElementById("adays").innerHTML =ncandle/Number(day);
+           
+      
+          
+            
+            
+           
+            
+
+
+
+
+       
+          
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
