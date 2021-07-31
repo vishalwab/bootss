@@ -49,35 +49,7 @@
   <input type="text" name="" value="Number Candle" class="text-center" onfocus="this.value=''" id="nc">
   <p></p>
   <a href="#scroll"><button class="btn btn-primary" type="button" onClick="answer()">Give me my Answer</button></a>
-  <p></p>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+           <p></p>
 
 </div>
 
@@ -99,50 +71,6 @@
 
 
 
-<script type="text/javascript">
-  function answer()
-{
-      
-          open= document.getElementById("op").value;
-          high= document.getElementById("hi").value;
-          close = document.getElementById("cl").value;   
-          intersection= document.getElementById("in").value;
-          pattenhigh = document.getElementById("ph").value;
-          pattenlow = document.getElementById("pl").value;
-          ncandle= document.getElementById("nc").value;
-
-
-
-           document.getElementById("aclose").innerHTML =close;
-           var x=document.getElementById("ax").innerHTML =pattenhigh-pattenlow;
-           var t=document.getElementById("atarget").innerHTML =Number(intersection)+Number(x);
-             var m=close-open;
-             var s = document.getElementById("asupport").innerHTML =m/2+Number(open);
-             document.getElementById("aresistence").innerHTML =high;
-              var v=2;
-             var s=document.getElementById("astoploss").innerHTML =Number(s)-Number(v);
-            var reword= document.getElementById("areword").innerHTML =Number(t)-Number(close);
-             var risk=document.getElementById("arisk").innerHTML =Number(close)-Number(s);
-                    document.getElementById("arr").innerHTML =Number(reword)/Number(risk);
-                    var day=3;
-                    document.getElementById("adays").innerHTML =ncandle/Number(day);
-           
-      
-          
-            
-            
-           
-            
-
-
-
-
-       
-          
-}
-
-
-</script>
 
 
 
